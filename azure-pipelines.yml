@@ -15,14 +15,14 @@ steps:
   inputs:
     verbose: false
 
--bash: |
-  cat > .env <<EOF
-  PRODUCT_SERVICE_BASE_URL=https://twt-prod-product-service.azurewebsites.net/
-  INVENTORY_SERVICE_BASE_URL=https://twt-prod-inventory-service.azurewebsites.net/
-  EOF
+- bash: |
+   cat > .env <<EOF
+   PRODUCT_SERVICE_BASE_URL=https://twt-prod-product-service.azurewebsites.net/
+   INVENTORY_SERVICE_BASE_URL=https://twt-prod-inventory-service.azurewebsites.net/
+   EOF
   displayName: 'Set up DB Connection'
 
--bash: |
+- bash: |
    npm run build
    ls
   displayName: 'Build App'
